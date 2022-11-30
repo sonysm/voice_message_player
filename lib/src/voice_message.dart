@@ -69,14 +69,15 @@ class _VoiceMessageState extends State<VoiceMessage>
       padding: EdgeInsets.symmetric(horizontal: .8.w()),
       constraints: BoxConstraints(maxWidth: 100.w() * .7),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(6.w()),
-          bottomLeft:
-              widget.me ? Radius.circular(6.w()) : Radius.circular(2.w()),
-          bottomRight:
-              !widget.me ? Radius.circular(6.w()) : Radius.circular(1.2.w()),
-          topRight: Radius.circular(6.w()),
-        ),
+        borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+        // borderRadius: BorderRadius.only(
+        //   topLeft: Radius.circular(6.w()),
+        //   bottomLeft:
+        //       widget.me ? Radius.circular(6.w()) : Radius.circular(2.w()),
+        //   bottomRight:
+        //       !widget.me ? Radius.circular(6.w()) : Radius.circular(1.2.w()),
+        //   topRight: Radius.circular(6.w()),
+        // ),
         color: widget.me ? widget.meBgColor : widget.contactBgColor,
       ),
       child: Padding(
