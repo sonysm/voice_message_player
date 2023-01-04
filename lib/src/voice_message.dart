@@ -27,8 +27,10 @@ class VoiceMessage extends StatefulWidget {
     this.meFgColor = const Color(0xffffffff),
     this.played = false,
     this.onPlay,
+    this.sendTime = '1: 12 AM',
   }) : super(key: key);
 
+  final String sendTime;
   final String audioSrc;
   final int noiseCount;
   final Color meBgColor,
@@ -132,7 +134,7 @@ class _VoiceMessageState extends State<VoiceMessage>
       );
 
   _durationWithNoise(BuildContext context) => Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           _noise(context),
           SizedBox(height: .3.w()),
@@ -148,7 +150,15 @@ class _VoiceMessageState extends State<VoiceMessage>
                   fontSize: 10,
                   color: widget.me ? widget.meFgColor : widget.contactFgColor,
                 ),
-              )
+              ),
+              const SizedBox(width: 24),
+              Text(
+                widget.sendTime,
+                style: TextStyle(
+                    fontSize: 12,
+                    color:
+                        widget.me ? widget.meFgColor : widget.contactFgColor),
+              ),
             ],
           ),
         ],
